@@ -7,7 +7,7 @@ import sort.Sort;
  * 
  * @author Jaskaran Singh
  */
-public class GenericSortingAlgorithmDemonstration {
+public class GenericSortingAlgorithmDemonstration1 {
     // Stores the text input cursor that will be used in this program.
     private static final String TEXT_INPUT_CURSOR = ">";
 
@@ -95,7 +95,7 @@ public class GenericSortingAlgorithmDemonstration {
      * @param lowerBound The inclusive lower bound of the created random number.
      * @param upperBound The exclusive upper bound of the created random numbers.
      * @return Returns the created random number.
-     * @throws IllegalArgumentException {@inheritDoc}
+     * @throws IllegalArgumentException
      */
     public static <E extends Number & Comparable<E>> Integer createRandomNumber(Random random, Integer lowerBound,
             Integer upperBound) throws IllegalArgumentException {
@@ -110,7 +110,7 @@ public class GenericSortingAlgorithmDemonstration {
      * @param lowerBound The inclusive lower bound of the random numbers that will be inserted in the array list.
      * @param upperBound The exclusive upper bound of the random numbers that will be inserted in the array list.
      * @return Returns the array list that is created and filled with random numbers.
-     * @throws IllegalArgumentException {@inheritDoc}
+     * @throws IllegalArgumentException
      */
     @SuppressWarnings("unchecked")
     public static <E extends Number & Comparable<E>> ArrayList<E> createArrayListOfRandomNumbers(int arrayListLength,
@@ -212,8 +212,14 @@ public class GenericSortingAlgorithmDemonstration {
             // Store the current time in milliseconds.
             startTimeInMilliseconds = System.currentTimeMillis();
             // Create an array list with the user-specified array list length and fill it with random numbers.
-            Double lowerBound = 0.0, upperBound = 100.0;
-            ArrayList<Double> arrayList = createArrayListOfRandomNumbers(arrayListLength, lowerBound, upperBound);
+            // Integer lowerBound = 0, upperBound = 100;
+            Long lowerBound = 0L, upperBound = 100L;
+            // Double lowerBound = 0.0, upperBound = 100.0;
+            // Float lowerBound = 0.0F, upperBound = 100.0F;
+            // ArrayList<Integer> arrayList = createArrayListOfRandomNumbers(arrayListLength, lowerBound, upperBound);
+            ArrayList<Long> arrayList = createArrayListOfRandomNumbers(arrayListLength, lowerBound, upperBound);
+            // ArrayList<Double> arrayList = createArrayListOfRandomNumbers(arrayListLength, lowerBound, upperBound);
+            // ArrayList<Float> arrayList = createArrayListOfRandomNumbers(arrayListLength, lowerBound, upperBound);
             // Store the current time in milliseconds.
             endTimeInMilliseconds = System.currentTimeMillis();
             // Calculate how much time has passed in seconds.
@@ -224,54 +230,60 @@ public class GenericSortingAlgorithmDemonstration {
             System.out.printf("Created an array list of length %d and filled it with random numbers in %f seconds.",
                     arrayList.size(), timePassedInSecondsDuringArrayListCreation);
             System.out.println();
-            // Print the array list.
-            printArrayList(arrayList);
+            // // Print the array list.
+            // printArrayList(arrayList);
             // Check whether the array list is sorted and print a message to indicate whether the array list is sorted.
             printIsArrayListSorted(arrayList);
 
-            // // Create a copy of the unsorted array list to sort in-place with bubble sort.
+            // Create a copy of the unsorted array list to sort in-place with bubble sort.
+            // ArrayList<Integer> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
+            ArrayList<Long> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
             // ArrayList<Double> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
-            // arrayListSortedWithBubbleSort.addAll(arrayList);
-            // // Store the current time in milliseconds.
-            // startTimeInMilliseconds = System.currentTimeMillis();
-            // // Sort the copied array list.
-            // Sort.bubbleSort(arrayListSortedWithBubbleSort);
-            // // Store the current time in milliseconds.
-            // endTimeInMilliseconds = System.currentTimeMillis();
-            // // Calculate how much time has passed in seconds.
-            // double timePassedInSecondsDuringBubbleSort = calculateTimePassedInSeconds(startTimeInMilliseconds,
-            //         endTimeInMilliseconds);
-            // // Tell the user that a copy of the array list was sorted. Also tell the user how long it took to do that.
-            // System.out.println();
-            // System.out.printf("Used bubble sort to sort a copy of the array list in %f seconds.",
-            //         timePassedInSecondsDuringBubbleSort);
-            // System.out.println();
+            // ArrayList<Float> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
+            arrayListSortedWithBubbleSort.addAll(arrayList);
+            // Store the current time in milliseconds.
+            startTimeInMilliseconds = System.currentTimeMillis();
+            // Sort the copied array list.
+            Sort.bubbleSort(arrayListSortedWithBubbleSort);
+            // Store the current time in milliseconds.
+            endTimeInMilliseconds = System.currentTimeMillis();
+            // Calculate how much time has passed in seconds.
+            double timePassedInSecondsDuringBubbleSort = calculateTimePassedInSeconds(startTimeInMilliseconds,
+                    endTimeInMilliseconds);
+            // Tell the user that a copy of the array list was sorted. Also tell the user how long it took to do that.
+            System.out.println();
+            System.out.printf("Used bubble sort to sort a copy of the array list in %f seconds.",
+                    timePassedInSecondsDuringBubbleSort);
+            System.out.println();
             // // Print the array list.
             // printArrayList(arrayListSortedWithBubbleSort);
-            // // Check whether the array list is sorted and print a message to indicate whether the array list is sorted.
-            // printIsArrayListSorted(arrayListSortedWithBubbleSort);
+            // Check whether the array list is sorted and print a message to indicate whether the array list is sorted.
+            printIsArrayListSorted(arrayListSortedWithBubbleSort);
 
-            // // Create a copy of the unsorted array list to sort in-place with merge sort.
+            // Create a copy of the unsorted array list to sort in-place with merge sort.
+            // ArrayList<Integer> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
+            ArrayList<Long> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
             // ArrayList<Double> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
-            // arrayListSortedWithMergeSort.addAll(arrayList);
-            // // Store the current time in milliseconds.
-            // startTimeInMilliseconds = System.currentTimeMillis();
-            // // Sort the copied array list.
-            // Sort.mergeSort(arrayList);
-            // // Store the current time in milliseconds.
-            // endTimeInMilliseconds = System.currentTimeMillis();
-            // // Calculate how much time has passed in seconds.
-            // double timePassedInSecondsDuringMergeSort = calculateTimePassedInSeconds(startTimeInMilliseconds,
-            //         endTimeInMilliseconds);
-            // // Tell the user that a copy of the array list was sorted. Also tell the user how long it took to do that.
-            // System.out.println();
-            // System.out.printf("Used merge sort to sort a copy of the array list in %f seconds.",
-            //         timePassedInSecondsDuringMergeSort);
-            // System.out.println();
+            // ArrayList<Float> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
+            arrayListSortedWithMergeSort.addAll(arrayList);
+            // Store the current time in milliseconds.
+            startTimeInMilliseconds = System.currentTimeMillis();
+            // Sort the copied array list.
+            Sort.mergeSort(arrayListSortedWithMergeSort);
+            // Store the current time in milliseconds.
+            endTimeInMilliseconds = System.currentTimeMillis();
+            // Calculate how much time has passed in seconds.
+            double timePassedInSecondsDuringMergeSort = calculateTimePassedInSeconds(startTimeInMilliseconds,
+                    endTimeInMilliseconds);
+            // Tell the user that a copy of the array list was sorted. Also tell the user how long it took to do that.
+            System.out.println();
+            System.out.printf("Used merge sort to sort a copy of the array list in %f seconds.",
+                    timePassedInSecondsDuringMergeSort);
+            System.out.println();
             // // Print the array list.
             // printArrayList(arrayListSortedWithMergeSort);
-            // // Check whether the array list is sorted and print a message to indicate whether the array list is sorted.
-            // printIsArrayListSorted(arrayListSortedWithMergeSort);
+            // Check whether the array list is sorted and print a message to indicate whether the array list is sorted.
+            printIsArrayListSorted(arrayListSortedWithMergeSort);
 
             // Ask the user if they want to use the program again.
             printLnTextLn("Would you like to use the program again?\n" + "Enter \"" + RESTART_COMMAND
