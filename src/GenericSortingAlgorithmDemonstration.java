@@ -229,30 +229,30 @@ public class GenericSortingAlgorithmDemonstration {
             // Check whether the array list is sorted and print a message to indicate whether the array list is sorted.
             printIsArrayListSorted(arrayList);
 
-            // Create a copy of the unsorted array list to sort in-place with bubble sort.
-            ArrayList<Double> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
-            arrayListSortedWithBubbleSort.addAll(arrayList);
-            // Store the current time in milliseconds.
-            startTimeInMilliseconds = System.currentTimeMillis();
-            // Sort the copied array list.
-            Sort.bubbleSort(arrayListSortedWithBubbleSort);
-            // Store the current time in milliseconds.
-            endTimeInMilliseconds = System.currentTimeMillis();
-            // Calculate how much time has passed in seconds.
-            double timePassedInSecondsDuringBubbleSort = calculateTimePassedInSeconds(startTimeInMilliseconds,
-                    endTimeInMilliseconds);
-            // Tell the user that a copy of the array list was sorted. Also tell the user how long it took to do that.
-            System.out.println();
-            System.out.printf("Used bubble sort to sort a copy of the array list in %f seconds.",
-                    timePassedInSecondsDuringBubbleSort);
-            System.out.println();
-            // Print the array list.
-            printArrayList(arrayListSortedWithBubbleSort);
-            // Check whether the array list is sorted and print a message to indicate whether the array list is sorted.
-            printIsArrayListSorted(arrayListSortedWithBubbleSort);
+            // // Create a copy of the unsorted array list to sort in-place with bubble sort.
+            // ArrayList<Double> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
+            // arrayListSortedWithBubbleSort.addAll(arrayList);
+            // // Store the current time in milliseconds.
+            // startTimeInMilliseconds = System.currentTimeMillis();
+            // // Sort the copied array list.
+            // Sort.bubbleSort(arrayListSortedWithBubbleSort);
+            // // Store the current time in milliseconds.
+            // endTimeInMilliseconds = System.currentTimeMillis();
+            // // Calculate how much time has passed in seconds.
+            // double timePassedInSecondsDuringBubbleSort = calculateTimePassedInSeconds(startTimeInMilliseconds,
+            //         endTimeInMilliseconds);
+            // // Tell the user that a copy of the array list was sorted. Also tell the user how long it took to do that.
+            // System.out.println();
+            // System.out.printf("Used bubble sort to sort a copy of the array list in %f seconds.",
+            //         timePassedInSecondsDuringBubbleSort);
+            // System.out.println();
+            // // Print the array list.
+            // printArrayList(arrayListSortedWithBubbleSort);
+            // // Check whether the array list is sorted and print a message to indicate whether the array list is sorted.
+            // printIsArrayListSorted(arrayListSortedWithBubbleSort);
 
             // // Create a copy of the unsorted array list to sort in-place with merge sort.
-            // ArrayList<Integer> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
+            // ArrayList<Double> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
             // arrayListSortedWithMergeSort.addAll(arrayList);
             // // Store the current time in milliseconds.
             // startTimeInMilliseconds = System.currentTimeMillis();
