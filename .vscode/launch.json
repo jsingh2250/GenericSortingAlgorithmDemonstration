@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch GenericSortingAlgorithmDemonstration2",
+            "request": "launch",
+            "mainClass": "GenericSortingAlgorithmDemonstration2",
+            "projectName": "GenericSortingAlgorithmDemonstration_ae47bb8e"
+        },
+        {
+            "type": "java",
             "name": "Launch GenericSortingAlgorithmDemonstration1",
             "request": "launch",
             "mainClass": "GenericSortingAlgorithmDemonstration1",

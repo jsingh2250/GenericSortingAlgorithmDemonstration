@@ -89,21 +89,6 @@ public class GenericSortingAlgorithmDemonstration1 {
     }
 
     /**
-     * Creates a random number in the range of the specified lower and upper bounds. The random number is of the same type as the lower and upper bounds. Returns the created random number.
-     * 
-     * @param random The random object used to create the random number.
-     * @param lowerBound The inclusive lower bound of the created random number.
-     * @param upperBound The exclusive upper bound of the created random numbers.
-     * @return Returns the created random number.
-     * @throws IllegalArgumentException
-     */
-    public static <E extends Number & Comparable<E>> Integer createRandomNumber(Random random, Integer lowerBound,
-            Integer upperBound) throws IllegalArgumentException {
-        // Return the created random number.
-        return random.nextInt(lowerBound, upperBound);
-    }
-
-    /**
      * Creates an array list of the specified length and fills it with random numbers between the lower bound (inclusive) and upper bound (exclusive). Returns the array list.
      * 
      * @param arrayListLength The array list length of the array list that is created and filled with random numbers.
@@ -212,12 +197,12 @@ public class GenericSortingAlgorithmDemonstration1 {
             // Store the current time in milliseconds.
             startTimeInMilliseconds = System.currentTimeMillis();
             // Create an array list with the user-specified array list length and fill it with random numbers.
-            // Integer lowerBound = 0, upperBound = 100;
-            Long lowerBound = 0L, upperBound = 100L;
+            Integer lowerBound = 0, upperBound = 100;
+            // Long lowerBound = 0L, upperBound = 100L;
             // Double lowerBound = 0.0, upperBound = 100.0;
             // Float lowerBound = 0.0F, upperBound = 100.0F;
-            // ArrayList<Integer> arrayList = createArrayListOfRandomNumbers(arrayListLength, lowerBound, upperBound);
-            ArrayList<Long> arrayList = createArrayListOfRandomNumbers(arrayListLength, lowerBound, upperBound);
+            ArrayList<Integer> arrayList = createArrayListOfRandomNumbers(arrayListLength, lowerBound, upperBound);
+            // ArrayList<Long> arrayList = createArrayListOfRandomNumbers(arrayListLength, lowerBound, upperBound);
             // ArrayList<Double> arrayList = createArrayListOfRandomNumbers(arrayListLength, lowerBound, upperBound);
             // ArrayList<Float> arrayList = createArrayListOfRandomNumbers(arrayListLength, lowerBound, upperBound);
             // Store the current time in milliseconds.
@@ -236,8 +221,8 @@ public class GenericSortingAlgorithmDemonstration1 {
             printIsArrayListSorted(arrayList);
 
             // Create a copy of the unsorted array list to sort in-place with bubble sort.
-            // ArrayList<Integer> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
-            ArrayList<Long> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
+            ArrayList<Integer> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
+            // ArrayList<Long> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
             // ArrayList<Double> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
             // ArrayList<Float> arrayListSortedWithBubbleSort = new ArrayList<>(arrayList.size());
             arrayListSortedWithBubbleSort.addAll(arrayList);
@@ -261,8 +246,8 @@ public class GenericSortingAlgorithmDemonstration1 {
             printIsArrayListSorted(arrayListSortedWithBubbleSort);
 
             // Create a copy of the unsorted array list to sort in-place with merge sort.
-            // ArrayList<Integer> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
-            ArrayList<Long> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
+            ArrayList<Integer> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
+            // ArrayList<Long> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
             // ArrayList<Double> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
             // ArrayList<Float> arrayListSortedWithMergeSort = new ArrayList<>(arrayList.size());
             arrayListSortedWithMergeSort.addAll(arrayList);
